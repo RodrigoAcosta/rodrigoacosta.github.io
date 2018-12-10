@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>Memorial UFPEL - Sala 1</title>
     <meta name="description" content="Memorial da UFPEL - Espaço 3º Andar Anglo."></meta>
-    <script src="https://aframe.io/releases/0.6.0/aframe.js"></script>
-    <script src="../../dist/aframe-room-component.min.js"></script>
+    <script src="../external-js/aframe.js"></script>
+    <script src="../external-js/aframe-room-component.min.js"></script>
+    <script src='../external-js/webvr-polyfill.js'></script> 
     <meta name="viewport" content="width=device-width, minimal-ui">
   </head>
   <body>
@@ -26,8 +27,10 @@
       <!-- Chao Anglo -->
       <a-plane src="#groundTexture" rotation="-90 0 0" position="0 -0.01 0" height="100" width="100"></a-plane>
     
-      <!-- box -->
-      <a-box depth="2" height="4" width="1" material="side: double; transparent: true; opacity: 0.5"></a-box>
+      <!--Vidro Expositor Coluna do Chão -->
+      <a-box depth="2" height="2" width="1" material="side: double; transparent: true; opacity: 0.5"></a-box>
+      <!-- Coluna do Chão dentro do Vidro-->
+      <a-box depth="1.5" height="1.5" width="0.7" material="color:#F88"></a-box>
 
 
       <!-- <a-light type="directional" intensity="0.9" position="-1 -2  2"></a-light>

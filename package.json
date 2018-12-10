@@ -3,10 +3,10 @@
   "version": "0.3.0",
   "description": "An A-Frame component for quickly creating rooms connected by doors.",
   "main": "index.js",
-  "cdn": "dist/aframe-room-component.min.js",
+  "cdn": "external-js/aframe-room-component.min.js",
   "scripts": {
-    "dev": "budo index.js:dist/aframe-room-component.min.js --port 7000 --live --open",
-    "dist": "webpack index.js dist/aframe-room-component.js && webpack -p index.js dist/aframe-room-component.min.js",
+    "dev": "budo index.js:external-js/aframe-room-component.min.js --port 7000 --live --open",
+    "dist": "webpack index.js dist/aframe-room-component.js && webpack -p index.js external-js/aframe-room-component.min.js",
     "lint": "semistandard -v | snazzy",
     "prepublish": "npm run dist",
     "ghpages": "ghpages",
