@@ -11,3 +11,6 @@ A set of [A-Frame](https://aframe.io) components for quickly creating rooms conn
 Install and use by directly including the [browser files](dist):
 
 Git Destinado à projetar um ambiente VR para o Memorial da Ufpel Anglo.
+
+
+Projeto inspirado em [omgitsraven](https://github.com/omgitsraven/aframe-room-component)
