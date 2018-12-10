@@ -1,9 +1,17 @@
 body{
-  background: #33425B;
-  color: #FAFAFA;
-  font-family: monospace;
-  font-size: 20px;
-  padding: 10px 20px;
+    background: #33425B;
+    color: #FAFAFA;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+#footer{
+    align-content: center;
+}
+
+iframe{
+    align-content: center;
 }
 
 h1{
