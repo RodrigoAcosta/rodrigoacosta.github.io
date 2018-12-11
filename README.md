@@ -2,8 +2,6 @@
 
 A set of [A-Frame](https://aframe.io) components for quickly creating rooms connected by doors.
 
-[Click here to see an example](https://omgitsraven.github.io/aframe-room-component/examples/basic/)
-
 ### Installation
 
 #### Browser
@@ -14,3 +12,5 @@ Git Destinado à projetar um ambiente VR para o Memorial da Ufpel Anglo.
 
 
 Projeto inspirado em [omgitsraven](https://github.com/omgitsraven/aframe-room-component)
+
+[Click here to see an example](https://omgitsraven.github.io/aframe-room-component/examples/basic/)
