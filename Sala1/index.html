@@ -15,14 +15,12 @@
       <!-- posiciona a camera -->
 <!-- DARIA PARA SETAR O Y DA CAMERA COM A ALTURA DA PESSOA, SIMULAR A PERSPECTIVA DAQUELA PESSOA -->
       <a-camera
-        position="0 1.5 10"
+        position="0 2 10"
         cursor-visible="true"
         cursor-scale="2"
         cursor-color="#0095DD"
         cursor-opacity="0.5">
       </a-camera>
-
-
 
       <a-assets> 
         <img id="abertura" src="imgs/tijolo_abertura.jpg">
@@ -33,15 +31,12 @@
         
         <img id="groundTexture" src="imgs/piso_anglo.jpg">
         <img id="skyTexture" src="imgs/sky.jpg">
-        
       </a-assets>
       
 
       <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048" segments-height="5" segments-width="8"></a-sky>
       <!-- Chao demais cenario -->
       <a-plane color="black" rotation="-90 0 0" position="0 -0.05 0" height="100" width="100"></a-plane>
-  
-
 
 <!-- LUZES DO AMBIENTE -->
       <a-light type="directional" intensity="0.9" position="-1 -2  2"></a-light>
@@ -53,314 +48,200 @@
       <!-- Chao Anglo -->
       <a-plane src="#groundTexture" rotation="-90 0 0" position="0 0.01 0" height="20" width="20"></a-plane>
 
-      <!-- Sala A Totem-->
-      <rw-room position="-10 0 -10" width="10" length="7" height="5">
+      <!-- Sala A - Curtica/Viga -->
+      <rw-room position="-10 0 -1" width="10" length="4" height="5" material="color:#505050">
+        <rw-wall position="0 0 -1">
+          <rw-doorhole id="holeA"></rw-doorhole>
+        </rw-wall>
+        <rw-wall position="0 0 3">
+            <rw-doorhole id="holeE"></rw-doorhole>
+            <rw-doorlink from="#holeE" to="#holeF" height="5" width="3.999" position="1 0 0"></rw-doorlink>
+        </rw-wall>
+        <rw-wall position="-10 0 3">
+          <rw-doorhole id="frontInner"></rw-doorhole>
+        </rw-wall>
+        <rw-wall position="-10 0 -1"></rw-wall>
+        <rw-floor mixin="floorMat"></rw-floor>
+        <rw-ceiling material="color:black"></rw-ceiling>
+      </rw-room> 
       
-        <rw-wall material="color:#505050">
-          <rw-doorhole id="salaA"></rw-doorhole>
-        </rw-wall>
-        <rw-wall material="color:#505050"></rw-wall>
-        <rw-wall position=" 2 0 0" material="src:#curtica; repeat:0.5 0.5;"></rw-wall>
-        <rw-wall material="color:#505050"></rw-wall>
-        
+      <rw-doorlink from="#holeA" to="#holeB" height="5" width="4" position="-10 0 0">
         <rw-floor mixin="floorMat"></rw-floor>
-        <!-- teto ambiente -->
-        <rw-ceiling material="color:#505050"></rw-ceiling>
-        
+        <rw-ceiling material="color:black"></rw-ceiling>
+        <rw-sides material="color:black"></rw-sides>
+      </rw-doorlink>
+      
+      <!-- Sala B - Totem -->
+      <rw-room position="0 0 0" height="5" material="color:#505050">
+        <rw-wall position="0 0 -10">
+          <rw-doorhole id="holeC"></rw-doorhole>
+          <rw-doorlink from="#holeC" to="#holeD" height="3.5" width="3" position="5 0 0"></rw-doorlink>
+        </rw-wall>
+        <rw-wall position="0 0 -1">
+          <rw-doorhole id="holeB"></rw-doorhole>
+        </rw-wall>
+        <rw-wall position="-10 0 -1"></rw-wall>
+        <rw-wall position="-10 0 -10"></rw-wall>
+        <rw-floor mixin="floorMat"></rw-floor>
+        <rw-ceiling material="color:black"></rw-ceiling>
+      </rw-room>
+      
+      <!-- Sala C part1 - Banners -->
+      <rw-room position="0 0 0" height="5" material="color:#505050">
+        <rw-wall position="10 0 -10"></rw-wall>
+        <rw-wall position="10 0 -1">
+            <rw-doorhole id="holeG"></rw-doorhole>
+            <rw-doorlink from="#holeG" to="#holeH" height="5" width="9.999" position="0.5 0 0"></rw-doorlink>
+        </rw-wall>
+        <rw-wall position="0 0 -1">
+          <rw-doorhole id="holeD"></rw-doorhole>
+        </rw-wall>
+        <rw-wall position="0 0 -10"></rw-wall>
+        <rw-floor mixin="floorMat"></rw-floor>
+        <rw-ceiling material="color:black"></rw-ceiling>
       </rw-room>
 
-      <!-- Sala B-->
-      <rw-room position="0 0 -10"width="10" length="12" height="5">
-          <rw-wall material="color:#505050"></rw-wall>
-          <rw-wall material="color:#505050"></rw-wall>
-          <rw-doorhole id="salaB"></rw-doorhole>
+      <!-- Sala C part1 - Banners -->
+      <rw-room position="0 0 0" height="5" material="color:#505050">
+        <rw-wall position="10 0 -1"></rw-wall>
+        <rw-wall position="10 0 3"></rw-wall>
+        <rw-wall position="0 0 3">
+          <rw-doorhole id="holeF"></rw-doorhole>
         </rw-wall>
-        <rw-wall material="color:#505050"></rw-wall>
-        <rw-wall material="color:#505050"></rw-wall>
-        
-        <rw-floor mixin="floorMat"></rw-floor>
-        <!-- teto ambiente -->
-        <rw-ceiling material="color:#505050"></rw-ceiling>
-        
-      </rw-room>
-
-      <!-- Sala C - Entrada-->
-      <rw-room position="-10 0 -3" width="10" length="5" height="5">
-          <rw-wall material="color:#505050"></rw-wall>
-              <a-plane src="#curtica" position="6.35 0 0.01" height="10" width="7.3"></a-plane>
-          </rw-wall>
-          <rw-wall material="color:#505050"></rw-wall>
-          <rw-doorhole id="salaC"></rw-doorhole>
+        <rw-wall position="0 0 -1">
+            <rw-doorhole id="holeH"></rw-doorhole>
         </rw-wall>
-        <rw-wall material="color:#505050"></rw-wall>
-        <rw-doorhole id="frontInner"></rw-doorhole>
-        <rw-wall material="color:#505050"></rw-wall>
-        
         <rw-floor mixin="floorMat"></rw-floor>
-        <!-- teto ambiente -->
-        <rw-ceiling material="color:#505050"></rw-ceiling>
-        
+        <rw-ceiling material="color:black"></rw-ceiling>
       </rw-room>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
+      <!-- Paredes Externas ao Memorial -->
+      <rw-room position="0 0 0" outside="true" material="color:#505050">
+        <rw-wall position="10 0 -10" height="5"></rw-wall>
+        <rw-wall position="10 0 3" height="5"></rw-wall>
+        <rw-wall position="-10 0  3" height="5">
+          <rw-doorhole id="frontOuter"></rw-doorhole>
+          <rw-doorlink from="#frontInner" to="#frontOuter" height="4" width="8" material="color:#505050" position="3 0 0">
+            <rw-floor></rw-floor>
+            <rw-ceiling></rw-ceiling>
+            <rw-sides></rw-sides>
+          </rw-doorlink>
+        </rw-wall>
+        <rw-wall position="-10 0  -10" height="5"></rw-wall>   
+      </rw-room>
 
 
 <!-- OBJETOS MEMORIAL -->
 
-      <!--Vidro Expositor Coluna do Chão -->
-      <a-box depth="1" height="2" width="2" position="-5 0.01 0" material="side: double; transparent: true; opacity: 0.5"></a-box>
-      <!-- Coluna do Chão dentro do Vidro-->
-      <a-box depth="0.7" height="1.5" width="1.5" position="-5 0.01 0" material="color:#F88"></a-box>      
-      
-      
+      <a-entity position="0 0 2">
+        <!--Vidro Expositor Coluna do Chão -->
+        <a-box depth="1" height="2" width="2" position="-5 0.01 0" material="side: double; transparent: true; opacity: 0.5"></a-box>
+        <!-- Coluna do Chão dentro do Vidro-->
+        <a-box depth="0.7" height="1.5" width="1.5" position="-5 0.01 0" material="color:#F88"></a-box>      
+      </a-entity>  
+        
       <a-entity position="-5 0 0">
       					
-      					<!-- Vidros expositores Inicial-->
+        <!-- Vidros expositores Inicial-->
 
-      <!-- Vidros expositor direita-->
-      <!-- Barra centro -->
-      <a-box depth="0.5" height="0.1" width="2.5" position="2 1.06 5.5" material="color:#DF7401"></a-box>
-      
-      <!-- Barras horizontais -->
-      <a-box depth="0.5" height="0.15" width="1" position="1.125 0.06 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="0.15" width="1" position="1.125 2.1 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="0.13" width="1" position="2.875 0.06 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="0.15" width="1" position="2.875 2.1 5.5" material="color:#DF7401"></a-box>
-      
-      <!-- Barras verticais -->
-      <a-box depth="0.5" height="2.3" width="0.15" position="0.7 1 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="2.3" width="0.15" position="3.3 1 5.5" material="color:#DF7401"></a-box>
-      
-      <!-- Vidros -->
-      <a-box depth="0.01" height="2" width="1.12" position="1.3 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>
-      <a-box depth="0.01" height="2" width="1.12" position="2.7 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>     
-
-
-                          <!-- Vidros expositor esquerda -->
-      <!-- Barra centro -->
-      <a-box depth="0.5" height="0.1" width="2.5" position="-2 1.06 5.5" material="color:#DF7401"></a-box>
-      
-      <!-- Barras horizontais -->
-      <a-box depth="0.5" height="0.15" width="1" position="-2.875 0.06 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="0.13" width="1" position="-2.875 2.1 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="0.15" width="1" position="-1.125 0.06 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="0.13" width="1" position="-1.125 2.1 5.5" material="color:#DF7401"></a-box>
-      
-      <!-- Barras verticais -->
-      <a-box depth="0.5" height="2.3" width="0.15" position="-3.3 1 5.5" material="color:#DF7401"></a-box>
-      <a-box depth="0.5" height="2.3" width="0.15" position="-0.7 1 5.5" material="color:#DF7401"></a-box>
-      
-      <!-- Vidros -->
-      <a-box depth="0.01" height="2" width="1.12" position="-1.3 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>
-      <a-box depth="0.01" height="2" width="1.12" position="-2.7 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>     
-
-    </a-entity>
-      
-
-                                  <!-- Expositor centro da sala esquerda -->
-    <a-entity position="0 0 -10">
-        <!-- Bloco centro -->
-        <a-box depth="0.4" height="2.5" width="1.2" position="4.2 1.06 5.5" material="color:#DF7401"></a-box>
-        <a-box depth="0.4" height="2.5" width="1.2" position="5.7 1.06 5.5" material="color:#DF7401"></a-box>
-        <a-box depth="0.07" height="2.2" width="4.1" position="5 0.9 5.5" material="color:#DF7401"></a-box>
-        <!-- Bancada-->
-        <a-box depth="0.65" height="0.05" width="1.2" rotation="8 0 0" position="4 0.9 5.8" material="color:#DF7401"></a-box>
-        <a-box depth="0.65" height="0.05" width="1.2" rotation="-8 0 0" position="4 0.9 5.15" material="color:#DF7401"></a-box>
-        <a-box depth="0.65" height="0.05" width="1.2" rotation="8 0 0" position="5.9 0.9 5.8" material="color:#DF7401"></a-box>
-        <a-box depth="0.65" height="0.05" width="1.2" rotation="-8 0 0" position="5.9 0.9 5.15" material="color:#DF7401"></a-box>
-    </a-entity>
-
-                    <!-- Baners da sala direita -->
-    <a-entity position="0 0 -5">
-        <!-- Baner direita -->
-        <a-box depth="0.1" height="3.5" width="2.2" position="4 2.3 5.5" material="color:#000000"></a-box>
+        <!-- Vidros expositor direita-->
+        <!-- Barra centro -->
+        <a-box depth="0.5" height="0.1" width="2.5" position="2 1.06 5.5" material="color:#DF7401"></a-box>
         
-        <!-- Baner direita -->
-        <a-box depth="0.1" height="3.5" width="2.2" position="7 2.3 5.5" material="color:#000000"></a-box>
+        <!-- Barras horizontais -->
+        <a-box depth="0.5" height="0.15" width="1" position="1.125 0.06 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="0.15" width="1" position="1.125 2.1 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="0.13" width="1" position="2.875 0.06 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="0.15" width="1" position="2.875 2.1 5.5" material="color:#DF7401"></a-box>
         
-    </a-entity>      
-
-                    <!-- Painéis da sala direita -->
-    <a-entity position="0 0 -15">
-        <!-- Painel da parede do fundo da sala -->
-        <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#8A0808"></a-box>
-    </a-entity>          
-    <a-entity position="0 0 -9">    
-        <!-- Painel da parede direita -->
-        <a-box depth="7.8" height="2" width="0.2" position="9.5 2.06 5.5" material="color:#8A0808"></a-box>
+        <!-- Barras verticais -->
+        <a-box depth="0.5" height="2.3" width="0.15" position="0.7 1 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="2.3" width="0.15" position="3.3 1 5.5" material="color:#DF7401"></a-box>
         
-    </a-entity>      
+        <!-- Vidros -->
+        <a-box depth="0.01" height="2" width="1.12" position="1.3 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>
+        <a-box depth="0.01" height="2" width="1.12" position="2.7 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>     
 
 
-                    <!-- Caixas sala do totem -->
-    <a-entity position="0 0 -3">
-        <!-- Caixa direita -->
-        <a-box depth="0.4" height="0.9" width="0.6" position="4.5 0.5 5.5" material="color:#000000"></a-box>
-        <a-cylinder color="#FFFFFF" height="0.35" position="4.5 1.1 5.5" radius="0.07"></a-cylinder>
-        <a-cylinder color="#FACC2E" height="0.27" position="4.5 1.115 5.5" radius="0.07"></a-cylinder>
+        <!-- Vidros expositor esquerda -->
+        <!-- Barra centro -->
+        <a-box depth="0.5" height="0.1" width="2.5" position="-2 1.06 5.5" material="color:#DF7401"></a-box>
         
-        <!-- Caixa direita -->
-        <a-box depth="0.4" height="0.9" width="0.6" position="5.5 0.5 5.5" material="color:#000000"></a-box>
-        <a-cylinder color="#FFFFFF" height="0.35" position="5.65 1.1 5.45" radius="0.07"></a-cylinder>
-        <a-cylinder color="#FACC2E" height="0.27" position="5.65 1.115 5.45" radius="0.07"></a-cylinder>
-        <a-cylinder color="#FFFFFF" height="0.2" position="5.35 1 5.55" radius="0.06"></a-cylinder>
-    </a-entity>      
+        <!-- Barras horizontais -->
+        <a-box depth="0.5" height="0.15" width="1" position="-2.875 0.06 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="0.13" width="1" position="-2.875 2.1 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="0.15" width="1" position="-1.125 0.06 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="0.13" width="1" position="-1.125 2.1 5.5" material="color:#DF7401"></a-box>
+        
+        <!-- Barras verticais -->
+        <a-box depth="0.5" height="2.3" width="0.15" position="-3.3 1 5.5" material="color:#DF7401"></a-box>
+        <a-box depth="0.5" height="2.3" width="0.15" position="-0.7 1 5.5" material="color:#DF7401"></a-box>
+        
+        <!-- Vidros -->
+        <a-box depth="0.01" height="2" width="1.12" position="-1.3 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>
+        <a-box depth="0.01" height="2" width="1.12" position="-2.7 1.1 5.66" material="side: double; transparent: true; opacity: 0.5"></a-box>     
 
-
-                    <!-- Totem -->
-    <a-entity position="0 0 -4">
-        <a-box depth="0.6" height="2" width="1" position="4.5 1 5.5" material="color:#FFFFFF"></a-box>
-        <a-box depth="0.401" height="1.9" width="0.9" position="4.5 1 5.6" material="color:#AA1414"></a-box>
-        <a-box depth="0.6" height="2" width="1.001" position="4.5 1 5.45" material="color:#AA1414"></a-box>
-        <a-box depth="0.01" height="0.45" width="0.8" position="4.5 1.5 5.8" material="color:#000000"></a-box>
-    </a-entity>      
-
-
-
-
+      </a-entity>
       
+      <!-- Expositor centro da sala esquerda -->
+      <a-entity position="0 0 -10">
+          <!-- Bloco centro -->
+          <a-box depth="0.4" height="2.5" width="1.2" position="4.2 1.06 5.5" material="color:#DF7401"></a-box>
+          <a-box depth="0.4" height="2.5" width="1.2" position="5.7 1.06 5.5" material="color:#DF7401"></a-box>
+          <a-box depth="0.07" height="2.2" width="4.1" position="5 0.9 5.5" material="color:#DF7401"></a-box>
+          <!-- Bancada-->
+          <a-box depth="0.65" height="0.05" width="1.2" rotation="8 0 0" position="4 0.9 5.8" material="color:#DF7401"></a-box>
+          <a-box depth="0.65" height="0.05" width="1.2" rotation="-8 0 0" position="4 0.9 5.15" material="color:#DF7401"></a-box>
+          <a-box depth="0.65" height="0.05" width="1.2" rotation="8 0 0" position="5.9 0.9 5.8" material="color:#DF7401"></a-box>
+          <a-box depth="0.65" height="0.05" width="1.2" rotation="-8 0 0" position="5.9 0.9 5.15" material="color:#DF7401"></a-box>
+      </a-entity>
 
+      <!-- Baners da sala direita -->
+      <a-entity position="0 0 -5">
+          <!-- Baner direita -->
+          <a-box depth="0.1" height="3.5" width="2.2" position="4 2.3 5.5" material="color:#000000"></a-box>
+          
+          <!-- Baner direita -->
+          <a-box depth="0.1" height="3.5" width="2.2" position="7 2.3 5.5" material="color:#000000"></a-box>
+          
+      </a-entity>      
 
+      <!-- Painéis da sala direita -->
+      <a-entity position="0 0 -15">
+          <!-- Painel da parede do fundo da sala -->
+          <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#8A0808"></a-box>
+      </a-entity>   
 
+      <a-entity position="0 0 -9">    
+          <!-- Painel da parede direita -->
+          <a-box depth="7.8" height="2" width="0.2" position="9.5 2.06 5.5" material="color:#8A0808"></a-box>
+          
+      </a-entity>      
 
+      <!-- Caixas sala do totem -->
+      <a-entity position="0 0 -3">
+          <!-- Caixa direita -->
+          <a-box depth="0.4" height="0.9" width="0.6" position="4.5 0.5 5.5" material="color:#000000"></a-box>
+          <a-cylinder color="#FFFFFF" height="0.35" position="4.5 1.1 5.5" radius="0.07"></a-cylinder>
+          <a-cylinder color="#FACC2E" height="0.27" position="4.5 1.115 5.5" radius="0.07"></a-cylinder>
+          
+          <!-- Caixa direita -->
+          <a-box depth="0.4" height="0.9" width="0.6" position="5.5 0.5 5.5" material="color:#000000"></a-box>
+          <a-cylinder color="#FFFFFF" height="0.35" position="5.65 1.1 5.45" radius="0.07"></a-cylinder>
+          <a-cylinder color="#FACC2E" height="0.27" position="5.65 1.115 5.45" radius="0.07"></a-cylinder>
+          <a-cylinder color="#FFFFFF" height="0.2" position="5.35 1 5.55" radius="0.06"></a-cylinder>
+      </a-entity>      
+
+      <!-- Totem -->
+      <a-entity position="0 0 -4">
+          <a-box depth="0.6" height="2" width="1" position="4.5 1 5.5" material="color:#FFFFFF"></a-box>
+          <a-box depth="0.401" height="1.9" width="0.9" position="4.5 1 5.6" material="color:#AA1414"></a-box>
+          <a-box depth="0.6" height="2" width="1.001" position="4.5 1 5.45" material="color:#AA1414"></a-box>
+          <a-box depth="0.01" height="0.45" width="0.8" position="4.5 1.5 5.8" material="color:#000000"></a-box>
+      </a-entity>      
+      
 
     </a-scene>
     
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    <rw-wall material="color:#505050">
-      <rw-doorhole id="holeA"></rw-doorhole>
-    </rw-wall>
-    <rw-wall material="color:#505050"></rw-wall>
-    <rw-wall material="color:#505050">
-      <rw-doorhole id="frontInner"></rw-doorhole>
-    </rw-wall>
-    <rw-wall material="color:#505050"></rw-wall>
-    
-    <rw-floor mixin="floorMat"></rw-floor>
-    <!-- teto ambiente -->
-    <rw-ceiling material="color:#505050"></rw-ceiling>
-    
-  </rw-room>
-  
-
-
-  
-
-  <rw-doorlink from="#holeA" to="#holeB" width="2" position="0.5 0 0">
-    <rw-floor mixin="floorMat"></rw-floor>
-    <!-- teto ambiente -->
-    <rw-ceiling material="color:#505050"></rw-ceiling>
-    <rw-sides material="color:#505050"></rw-sides>
-  </rw-doorlink>
-  
-
-
-
-
-
-
-  <rw-room position="0 0 -4">
-    
-    <rw-wall position="-2 0 0" material="color:#505050"></rw-wall>
-    <rw-wall position=" 2 0 0" material="src:#curtica; repeat:0.5 0.5;">
-    <!-- <rw-wall position=" 2 0 0" material="src:#abertura; repeat:0.5 0.5;"> -->
-      <rw-doorhole id="holeB"></rw-doorhole>
-    </rw-wall>
-    <rw-wall position=" 2 0 -6" material="color:#505050">
-      <rw-doorhole id="holeC"></rw-doorhole>
-      <rw-doorlink from="#holeC" to="#holeD" position="3 0 0" width="2"></rw-doorlink>
-    </rw-wall>
-    <rw-wall position="-2 0 -5" material="color:#505050">
-      <a-box position="0.5 1.4 0" scale="0.5 0.5 0.2"></a-box>
-      <a-box position="1.5 1.7 0" scale="0.5 0.5 0.2"></a-box>
-      <a-box position="2.5 1.4 0" scale="0.5 0.5 0.2"></a-box>
-    </rw-wall>
-    
-    <rw-floor mixin="floorMat"></rw-floor>
-    <!-- teto ambiente -->
-    <rw-ceiling material="color:#505050"></rw-ceiling>
-    
-  </rw-room>
-  
-  <rw-room position="2 0 -7">
-    <rw-wall position="0 0 4" material="color:#505050"></rw-wall>
-    <rw-wall position="0 0 -3" material="color:#505050">
-      <rw-doorhole id="holeD"></rw-doorhole>
-    </rw-wall>
-    <rw-wall position="8 0 -3" material="color:#505050"></rw-wall>
-    <rw-wall position="8 0 4" material="color:#505050"></rw-wall>
-    
-    <rw-floor mixin="floorMat"></rw-floor>
-    <!-- teto ambiente -->
-    <rw-ceiling material="color:#505050"></rw-ceiling>
-    
-  </rw-room>
-  
-  <rw-room position="0 0 0" outside="true" material="color:#505050">
-    
-    <!-- faces das paredes externas -->
-    <rw-wall position="-10 0 -10" height="5"></rw-wall>
-    <rw-wall position=" 10 0 -10" height="5"></rw-wall>
-    <rw-wall position=" 10 0  3" height="5"></rw-wall>
-    <rw-wall position="-10 0  3" height="5">
-      <rw-doorhole id="frontOuter"></rw-doorhole>
-      
-      <!-- Porta de Entrada -->
-      <rw-doorlink from="#frontInner" to="#frontOuter" height="4" width="4" material="color:#505050" position="2.5 0 0">
-        <rw-floor></rw-floor>
-        <rw-ceiling></rw-ceiling>
-        <rw-sides></rw-sides>
-      </rw-doorlink>
-    </rw-wall>
-    
-  </rw-room>
