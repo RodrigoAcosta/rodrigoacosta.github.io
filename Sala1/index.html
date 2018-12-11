@@ -24,11 +24,11 @@
 
 
 
-      <a-assets>
-          
+      <a-assets> 
         <img id="abertura" src="imgs/tijolo_abertura.jpg">
         <img id="curtica" src="imgs/parede_curtica.jpg">
         
+        <!-- Quadros da Parede -->
         <a-mixin id="floorMat" material="color:#BBB"></a-mixin>
         
         <img id="groundTexture" src="imgs/piso_anglo.jpg">
@@ -38,24 +38,102 @@
       
 
       <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048" segments-height="5" segments-width="8"></a-sky>
-      <!-- Parede da Sala-->
-      <!-- <a-plane color="#505050"rotation="0 0 0" position="0 1 0" height="10" width="20"></a-plane> -->
-      <!-- Chao Anglo -->
-      <a-plane src="#groundTexture" rotation="-90 0 0" position="0 0.01 0" height="20" width="20"></a-plane>
       <!-- Chao demais cenario -->
       <a-plane color="black" rotation="-90 0 0" position="0 -0.05 0" height="100" width="100"></a-plane>
-    
+  
 
 
-      <!-- OBJETOS MEMORIAL -->
+<!-- LUZES DO AMBIENTE -->
+      <a-light type="directional" intensity="0.9" position="-1 -2  2"></a-light>
+      <a-light type="directional" intensity="1.0" position=" 2  1 -1"></a-light>
+
+
+<!-- AMBIENTE MEMORIAL -->
+
+      <!-- Chao Anglo -->
+      <a-plane src="#groundTexture" rotation="-90 0 0" position="0 0.01 0" height="20" width="20"></a-plane>
+
+      <!-- Sala A Totem-->
+      <rw-room position="-10 0 -10" width="10" length="7" height="5">
+      
+        <rw-wall material="color:#505050">
+          <rw-doorhole id="salaA"></rw-doorhole>
+        </rw-wall>
+        <rw-wall material="color:#505050"></rw-wall>
+        <rw-wall position=" 2 0 0" material="src:#curtica; repeat:0.5 0.5;"></rw-wall>
+        <rw-wall material="color:#505050"></rw-wall>
+        
+        <rw-floor mixin="floorMat"></rw-floor>
+        <!-- teto ambiente -->
+        <rw-ceiling material="color:#505050"></rw-ceiling>
+        
+      </rw-room>
+
+      <!-- Sala B-->
+      <rw-room position="0 0 -10"width="10" length="12" height="5">
+          <rw-wall material="color:#505050"></rw-wall>
+          <rw-wall material="color:#505050"></rw-wall>
+          <rw-doorhole id="salaB"></rw-doorhole>
+        </rw-wall>
+        <rw-wall material="color:#505050"></rw-wall>
+        <rw-wall material="color:#505050"></rw-wall>
+        
+        <rw-floor mixin="floorMat"></rw-floor>
+        <!-- teto ambiente -->
+        <rw-ceiling material="color:#505050"></rw-ceiling>
+        
+      </rw-room>
+
+      <!-- Sala C - Entrada-->
+      <rw-room position="-10 0 -3" width="10" length="5" height="5">
+          <rw-wall material="color:#505050"></rw-wall>
+              <a-plane src="#curtica" position="6.35 0 0.01" height="10" width="7.3"></a-plane>
+          </rw-wall>
+          <rw-wall material="color:#505050"></rw-wall>
+          <rw-doorhole id="salaC"></rw-doorhole>
+        </rw-wall>
+        <rw-wall material="color:#505050"></rw-wall>
+        <rw-doorhole id="frontInner"></rw-doorhole>
+        <rw-wall material="color:#505050"></rw-wall>
+        
+        <rw-floor mixin="floorMat"></rw-floor>
+        <!-- teto ambiente -->
+        <rw-ceiling material="color:#505050"></rw-ceiling>
+        
+      </rw-room>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OBJETOS MEMORIAL -->
 
       <!--Vidro Expositor Coluna do Chão -->
-      <a-box depth="1" height="2" width="2" position="1 0.01 1.5" material="side: double; transparent: true; opacity: 0.5"></a-box>
+      <a-box depth="1" height="2" width="2" position="-5 0.01 0" material="side: double; transparent: true; opacity: 0.5"></a-box>
       <!-- Coluna do Chão dentro do Vidro-->
-      <a-box depth="0.7" height="1.5" width="1.5" position="1 0.01 1.5" material="color:#F88"></a-box>
-
+      <a-box depth="0.7" height="1.5" width="1.5" position="-5 0.01 0" material="color:#F88"></a-box>      
       
-                 
       <!-- Vidros expositores Inicial-->
 
                           <!-- Vidros expositor direita-->
@@ -101,94 +179,126 @@
       <a-light type="directional" intensity="0.9" position="-1 -2  2"></a-light>
       <a-light type="directional" intensity="1.0" position=" 2  1 -1"></a-light>
 
-      
-      <!-- Paredes Sala Totem-->
-      <rw-room position="-2.5 0 -2.5" width="5" length="5" height="5">
-        
-        <rw-wall material="color:#505050">
-          <rw-doorhole id="holeA"></rw-doorhole>
-        </rw-wall>
-        <rw-wall material="color:#505050"></rw-wall>
-        <rw-wall material="color:#505050">
-          <rw-doorhole id="frontInner"></rw-doorhole>
-        </rw-wall>
-        <rw-wall material="color:#505050"></rw-wall>
-        
-        <rw-floor mixin="floorMat"></rw-floor>
-        <!-- teto ambiente -->
-        <rw-ceiling material="color:#505050"></rw-ceiling>
-        
-      </rw-room>
-      
-
-      
 
 
-      <rw-doorlink from="#holeA" to="#holeB" width="2" position="0.5 0 0">
-        <rw-floor mixin="floorMat"></rw-floor>
-        <!-- teto ambiente -->
-        <rw-ceiling material="color:#505050"></rw-ceiling>
-        <rw-sides material="color:#505050"></rw-sides>
-      </rw-doorlink>
-      
-      <rw-room position="0 0 -2.7">
-        
-        <rw-wall position="-2 0 0" material="color:#505050"></rw-wall>
-        <rw-wall position=" 2 0 0" material="src:#curtica; repeat:0.5 0.5;">
-        <!-- <rw-wall position=" 2 0 0" material="src:#abertura; repeat:0.5 0.5;"> -->
-          <rw-doorhole id="holeB"></rw-doorhole>
-        </rw-wall>
-        <rw-wall position=" 2 0 -5" material="color:#505050">
-          <rw-doorhole id="holeC"></rw-doorhole>
-          <rw-doorlink from="#holeC" to="#holeD" position="4 0 0"></rw-doorlink>
-        </rw-wall>
-        <rw-wall position="-2 0 -5" material="color:#505050">
-          <a-box position="0.5 1.4 0" scale="0.5 0.5 0.2"></a-box>
-          <a-box position="1.5 1.7 0" scale="0.5 0.5 0.2"></a-box>
-          <a-box position="2.5 1.4 0" scale="0.5 0.5 0.2"></a-box>
-        </rw-wall>
-        
-        <rw-floor mixin="floorMat"></rw-floor>
-        <!-- teto ambiente -->
-        <rw-ceiling material="color:#505050"></rw-ceiling>
-        
-      </rw-room>
-      
-      <rw-room position="2 0 -5">
-        
-        <rw-wall position="0 0 0" material="color:#505050"></rw-wall>
-        <rw-wall position="0 0 2" material="color:#505050">
-          <rw-doorhole id="holeD"></rw-doorhole>
-        </rw-wall>
-        <rw-wall position="1 0 2" material="color:#505050"></rw-wall>
-        <rw-wall position="1 0 0" material="color:#505050"></rw-wall>
-        
-        <rw-floor mixin="floorMat"></rw-floor>
-        <!-- teto ambiente -->
-        <rw-ceiling material="color:#505050"></rw-ceiling>
-        
-      </rw-room>
-      
-      <rw-room position="0 0 0" outside="true" material="color:#505050">
-        
-        <!-- faces das paredes externas -->
-        <rw-wall position="-3 0 -8" height="5"></rw-wall>
-        <rw-wall position=" 4 0 -8" height="5"></rw-wall>
-        <rw-wall position=" 4 0  3" height="5"></rw-wall>
-        <rw-wall position="-3 0  3" height="5">
-          <rw-doorhole id="frontOuter"></rw-doorhole>
-          
-          <!-- Porta de Entrada -->
-          <rw-doorlink from="#frontInner" to="#frontOuter" height="4" width="4" material="color:#505050" position="2.5 0 0">
-            <rw-floor></rw-floor>
-            <rw-ceiling></rw-ceiling>
-            <rw-sides></rw-sides>
-          </rw-doorlink>
-        </rw-wall>
-        
-      </rw-room>
-    
+
+
+
     </a-scene>
     
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    <rw-wall material="color:#505050">
+      <rw-doorhole id="holeA"></rw-doorhole>
+    </rw-wall>
+    <rw-wall material="color:#505050"></rw-wall>
+    <rw-wall material="color:#505050">
+      <rw-doorhole id="frontInner"></rw-doorhole>
+    </rw-wall>
+    <rw-wall material="color:#505050"></rw-wall>
+    
+    <rw-floor mixin="floorMat"></rw-floor>
+    <!-- teto ambiente -->
+    <rw-ceiling material="color:#505050"></rw-ceiling>
+    
+  </rw-room>
+  
+
+
+  
+
+  <rw-doorlink from="#holeA" to="#holeB" width="2" position="0.5 0 0">
+    <rw-floor mixin="floorMat"></rw-floor>
+    <!-- teto ambiente -->
+    <rw-ceiling material="color:#505050"></rw-ceiling>
+    <rw-sides material="color:#505050"></rw-sides>
+  </rw-doorlink>
+  
+
+
+
+
+
+
+  <rw-room position="0 0 -4">
+    
+    <rw-wall position="-2 0 0" material="color:#505050"></rw-wall>
+    <rw-wall position=" 2 0 0" material="src:#curtica; repeat:0.5 0.5;">
+    <!-- <rw-wall position=" 2 0 0" material="src:#abertura; repeat:0.5 0.5;"> -->
+      <rw-doorhole id="holeB"></rw-doorhole>
+    </rw-wall>
+    <rw-wall position=" 2 0 -6" material="color:#505050">
+      <rw-doorhole id="holeC"></rw-doorhole>
+      <rw-doorlink from="#holeC" to="#holeD" position="3 0 0" width="2"></rw-doorlink>
+    </rw-wall>
+    <rw-wall position="-2 0 -5" material="color:#505050">
+      <a-box position="0.5 1.4 0" scale="0.5 0.5 0.2"></a-box>
+      <a-box position="1.5 1.7 0" scale="0.5 0.5 0.2"></a-box>
+      <a-box position="2.5 1.4 0" scale="0.5 0.5 0.2"></a-box>
+    </rw-wall>
+    
+    <rw-floor mixin="floorMat"></rw-floor>
+    <!-- teto ambiente -->
+    <rw-ceiling material="color:#505050"></rw-ceiling>
+    
+  </rw-room>
+  
+  <rw-room position="2 0 -7">
+    <rw-wall position="0 0 4" material="color:#505050"></rw-wall>
+    <rw-wall position="0 0 -3" material="color:#505050">
+      <rw-doorhole id="holeD"></rw-doorhole>
+    </rw-wall>
+    <rw-wall position="8 0 -3" material="color:#505050"></rw-wall>
+    <rw-wall position="8 0 4" material="color:#505050"></rw-wall>
+    
+    <rw-floor mixin="floorMat"></rw-floor>
+    <!-- teto ambiente -->
+    <rw-ceiling material="color:#505050"></rw-ceiling>
+    
+  </rw-room>
+  
+  <rw-room position="0 0 0" outside="true" material="color:#505050">
+    
+    <!-- faces das paredes externas -->
+    <rw-wall position="-10 0 -10" height="5"></rw-wall>
+    <rw-wall position=" 10 0 -10" height="5"></rw-wall>
+    <rw-wall position=" 10 0  3" height="5"></rw-wall>
+    <rw-wall position="-10 0  3" height="5">
+      <rw-doorhole id="frontOuter"></rw-doorhole>
+      
+      <!-- Porta de Entrada -->
+      <rw-doorlink from="#frontInner" to="#frontOuter" height="4" width="4" material="color:#505050" position="2.5 0 0">
+        <rw-floor></rw-floor>
+        <rw-ceiling></rw-ceiling>
+        <rw-sides></rw-sides>
+      </rw-doorlink>
+    </rw-wall>
+    
+  </rw-room>
