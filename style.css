@@ -1,62 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+@import url('https://fonts.googleapis.com/css?family=Economica');
+
 body{
-    background: #33425B;
-    color: #FAFAFA;
+    background: #252839;
+    color: #b5b5b7;
     font-family: monospace;
     font-size: 20px;
     padding: 10px 20px;
 }
 
-#footer{
-    align-content: center;
+header{
+    text-align: center;
 }
 
-iframe{
-    align-content: center;
+header h1{
+    font-family: 'Bad Script', cursive;
+}
+
+#minor-list{
+    list-style-type: none;
+    float: right;
+    display: block;
+    margin-top: 25px;
+}
+
+#card{
+    font-family: 'Bad Script', cursive;
+    color: #f2b632;
+}
+
+#logos{
+    text-align: center;
+}
+
+#ufpel-logo{
+    width: 170px;
+}
+
+#ccomp{
+    width: 50px;
+    float: right;
 }
 
 h1{
-  font-weight: 300;
-  font-family: monospace;
-  padding: 10px 20px;
-  align-content: center;
+    text-align: center;
+    color: #f2b632;
+}
+
+h3{
+    text-align: center;
+    color: #f2b632;
+}
+
+article p{
+    text-align: justify;
+    text-indent: 50px;
+    font-size: 20px;
+    font-family: 'Economica', sans-serif;
+}
+
+hr{
+    margin: 50px 50px 50px 50px;
+    color: #f2b632;
+}
+
+#flist figure{
+    color: white;
+    width: 20px;
+}
+
+figure a{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border: 10px solid #f2b632;
+    border-radius: 10px;
+    padding: 5px;
+    width: 150px;
+}
+
+figure a:hover{
+    opacity: 0.8;
+}
+
+#hue{
+    font-family: 'Bad Script', cursive;
+    color: #f2b632;
+}
+
+#footer p{
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    padding:  10px 10px 10px 10px;
+}
+
+#address{
+    text-align: center;
+}
+
+#address iframe{
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+h1{
+    font-weight: 300;
+    font-family: monospace;
+    padding: 10px 20px;
+    align-content: center;
 }
 
 a{
-  color: #FAFAFA;
-  display: block;
-  padding: 15px 0;
+    color: #FAFAFA;
+    display: block;
+    padding: 15px 0;
 }
 
 img{
-  max-width: 320px;
+    max-width: 320px;
 }
 
 ul{
-  display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-  padding: 5px 0 0;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 5px 0 0;
 }
 
 ul li{
-  margin-right: 30px;
-  padding: 5px 0 30px;
+    margin-right: 30px;
+    padding: 5px 0 30px;
 }
 
 ul a{
-  background-size: cover;
-  display: block;
-  padding: 0;
-  height: 320px;
-  width: 320px;
+    background-size: cover;
+    display: block;
+    padding: 0;
+    height: 320px;
+    width: 320px;
 }
 
 ul h3, ul p {
-  max-width: 480px;
-  font-family: monospace;
-  font-size: 20px;
-  padding: 10px 20px;
+    max-width: 480px;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 10px 20px;
 }
 
-.github-corner:hover 
+.github-corner:hover
 .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
