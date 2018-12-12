@@ -15,7 +15,7 @@
       <!-- posiciona a camera -->
 <!-- DARIA PARA SETAR O Y DA CAMERA COM A ALTURA DA PESSOA, SIMULAR A PERSPECTIVA DAQUELA PESSOA -->
       <a-camera
-        position="0 2 10"
+        position="0 1.5 10"
         cursor-visible="true"
         cursor-scale="2"
         cursor-color="#0095DD"
@@ -26,6 +26,9 @@
         <img id="abertura" src="imgs/tijolo_abertura.jpg">
         <img id="curtica" src="imgs/parede_curtica.jpg">
         <img id="logo_memorial" src="imgs/logo_memorial.jpeg">
+        <img id="logo_npc-prec" src="imgs/logo_npc-prec.jpg">
+        <img id="viga_data" src="imgs/viga_data.png">
+        
         
         <!-- Quadros da Parede -->
         <a-mixin id="floorMat" material="color:#BBB"></a-mixin>
@@ -139,9 +142,26 @@
       <!-- Coluna Exposta no Chao -->
       <a-entity position="0 0 2">
         <!--Vidro Expositor Coluna do Chão -->
-        <a-box depth="1" height="2" width="2" position="-5 0.01 0" material="side: double; transparent: true; opacity: 0.5"></a-box>
+        <a-box depth="1" height="2" width="2.5" position="-5 0.01 0" material="side: double; transparent: true; opacity: 0.5"></a-box>
         <!-- Coluna do Chão dentro do Vidro-->
-        <a-box depth="0.7" height="1.5" width="1.5" position="-5 0.01 0" material="color:#F88"></a-box>      
+        <a-box depth="0.7" height="1.5" width="1.5" position="-5 0.01 0" material="color:white"></a-box>   
+        <!-- Data da Viga -->
+        <a-plane src="#viga_data" rotation="-90 0 180" position="-5 0.761 0" height="0.7" width="1.5"></a-plane>
+        
+        <!-- Ferros da Direita da Coluna  -->
+        <a-cylinder color="#505050" height="0.15" rotation="90 0 90" position="-4.21 0.6 0.2" radius="0.02"></a-cylinder>
+        <a-cylinder color="#505050" height="0.25" rotation="90 0 90" position="-4.21 0.6 -0.2" radius="0.02"></a-cylinder>
+
+        <a-cylinder color="#505050" height="0.5" rotation="90 0 90" position="-4.21 0.2 0.2" radius="0.02"></a-cylinder>
+        <a-cylinder color="#505050" height="0.55" rotation="90 0 90" position="-4.21 0.2 0" radius="0.02"></a-cylinder>
+        <a-cylinder color="#505050" height="0.4" rotation="90 0 90" position="-4.21 0.2 -0.2" radius="0.02"></a-cylinder>
+
+        <!-- Ferros da Direita da Coluna  -->
+        <a-cylinder color="#505050" height="0.4" rotation="-90 0 90" position="-5.7 0.6 -0.2" radius="0.02"></a-cylinder>
+
+        <a-cylinder color="#505050" height="0.5" rotation="-90 0 90" position="-5.7 0.2 0.2" radius="0.02"></a-cylinder>
+        <a-cylinder color="#505050" height="0.55" rotation="-90 0 90" position="-5.7 0.2 0" radius="0.02"></a-cylinder>
+        <a-cylinder color="#505050" height="0.4" rotation="-90 0 90" position="-5.7 0.2 -0.2" radius="0.02"></a-cylinder>
       </a-entity>  
       
       <!-- Guiches Externos -->
@@ -259,6 +279,7 @@
 
         <!-- Baner sala totem -->
         <a-box depth="0.1" height="4" width="5" rotation="0 90 0" position="0.1 2.7 -7" material="color:#000000"></a-box>
+        <a-plane src="#logo_npc-prec" rotation="0 90 0" position="0.16 2.7 -7" height="3.5" width="4.5"></a-plane>
         
       </a-entity> 
 
