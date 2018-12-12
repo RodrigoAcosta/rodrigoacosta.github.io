@@ -15,7 +15,7 @@
       <!-- posiciona a camera -->
 <!-- DARIA PARA SETAR O Y DA CAMERA COM A ALTURA DA PESSOA, SIMULAR A PERSPECTIVA DAQUELA PESSOA -->
       <a-camera
-        position="0 1.5 10"
+        position="-3 1.5 -5"
         cursor-visible="true"
         cursor-scale="2"
         cursor-color="#0095DD"
@@ -28,6 +28,8 @@
         <img id="logo_memorial" src="imgs/logo_memorial.jpeg">
         <img id="logo_npc-prec" src="imgs/logo_npc-prec.jpg">
         <img id="viga_data" src="imgs/viga_data.png">
+        <img id="mural_rampa" src="imgs/mural-fundo-Totem-Esquerda.jpg">
+        <img id="mural_seringa" src="imgs/mural-fundo-Totem-Direita.jpg">
         
         
         <!-- Quadros da Parede -->
@@ -234,12 +236,12 @@
       <!-- Painéis da sala direita -->
       <a-entity position="0 0 -15">
           <!-- Painel da parede do fundo da sala -->
-          <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#8A0808"></a-box>
+          <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#990000"></a-box>
       </a-entity>   
 
       <a-entity position="0 0 -9">    
           <!-- Painel da parede direita -->
-          <a-box depth="7.8" height="2" width="0.2" position="9.5 2.06 7.5" material="color:#8A0808"></a-box>
+          <a-box depth="7.8" height="2" width="0.2" position="9.5 2.06 7.5" material="color:#990000"></a-box>
           
       </a-entity>      
 
@@ -268,7 +270,9 @@
       <!-- Painéis da sala Totem -->
       <a-entity position="-10 0 -15">
         <!-- Painel da parede do fundo da sala -->
-        <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#8A0808"></a-box>
+        <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#990000"></a-box>
+        <a-plane src="#mural_rampa" rotation="0 0 0" position="3.5 2.06 5.61" height="2" width="4.8"></a-plane>
+        <a-plane src="#mural_seringa" rotation="0 0 0" position="7.5 2.06 5.61" height="2" width="4.8"></a-plane>
       </a-entity>
 
       <!-- Baners da sala de entrada e sala do totem -->
