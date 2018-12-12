@@ -42,7 +42,7 @@
         <img id="texto_mural_externo2_direita" src="imgs/texto-vidro-2-direita.png">
         <img id="texto_viga" src="imgs/Texto-vidro-viga.png">
         <img id="texto_vao_salaB" src="imgs/texto-vao.png">
-        <img id="texto_mural_amarelo1_esquerda" src="imgs/texto-amarelo-1-frente-esquerdapng">
+        <img id="texto_mural_amarelo1_esquerda" src="imgs/texto-amarelo-1-frente-esquerda.png">
         <img id="texto_mural_amarelo1_direita" src="imgs/texto-amarelo-1-frente-direita.png">
         <img id="texto_mural_amarelo2_esquerda" src="imgs/texto-amarelo-2-fundo-esquerda.png">
         <img id="texto_mural_amarelo2_direita" src="imgs/texto-amarelo-2-fundo-direita.png">
@@ -161,7 +161,7 @@
       <a-entity position="0 0 2">
         <!--Vidro Expositor Coluna do Chão -->
         <a-box depth="1" height="2" width="2.5" position="-5 0.01 0" material="side: double; transparent: true; opacity: 0.5"></a-box>
-        <a-image position = "-4.03 1.02 -0.16" width="1" height="0.8" rotation="-90 0 0" src="#texto_viga" transparent="true" alpha-test="0.5"></a-image>
+        <a-image position = "-4.01 1.02 -0.26" width="0.5" height="0.5" rotation="-90 0 0" src="#texto_viga" transparent="true" alpha-test="0.5"></a-image>
         <!-- Coluna do Chão dentro do Vidro-->
         <a-box depth="0.7" height="1.5" width="1.5" position="-5 0.01 0" material="color:white"></a-box>   
         <!-- Data da Viga -->
@@ -236,6 +236,24 @@
           <a-box depth="0.4" height="2.5" width="1.2" position="4.2 1.06 5.5" material="color:#DF7401"></a-box>
           <a-box depth="0.4" height="2.5" width="1.2" position="5.7 1.06 5.5" material="color:#DF7401"></a-box>
           <a-box depth="0.07" height="2.2" width="4.1" position="5 0.9 5.5" material="color:#DF7401"></a-box>
+
+          <!-- Texto Esquerda -->
+          <a-image position = "3.28 1.5 5.54" width="0.5" height="0.5" rotation="0 0 0" src="#texto_mural_amarelo1_esquerda" transparent="true" alpha-test="0.5"></a-image>
+          <a-image position = "3.28 1.5 5.46" width="0.5" height="0.5" rotation="0 180 0" src="#texto_mural_amarelo2_direita" transparent="true" alpha-test="0.5"></a-image>
+
+          <!-- Texto Esquerda -->
+          <a-image position = "6.7 1.5 5.54" width="0.5" height="0.5" rotation="0 0 0" src="#texto_mural_amarelo1_direita" transparent="true" alpha-test="0.5"></a-image>
+          <a-image position = "6.7 1.5 5.46" width="0.5" height="0.5" rotation="0 180 0" src="#texto_mural_amarelo2_esquerda" transparent="true" alpha-test="0.5"></a-image>
+
+
+
+          <!-- Imagens Expositor -->
+
+
+
+
+
+
           <!-- Bancada-->
           <a-box depth="0.65" height="0.05" width="1.2" rotation="8 0 0" position="4 0.9 5.8" material="color:#DF7401"></a-box>
           <a-box depth="0.65" height="0.05" width="1.2" rotation="-8 0 0" position="4 0.9 5.15" material="color:#DF7401"></a-box>
