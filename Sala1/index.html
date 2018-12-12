@@ -25,6 +25,7 @@
       <a-assets> 
         <img id="abertura" src="imgs/tijolo_abertura.jpg">
         <img id="curtica" src="imgs/parede_curtica.jpg">
+        <img id="logo_memorial" src="imgs/logo_memorial.jpeg">
         
         <!-- Quadros da Parede -->
         <a-mixin id="floorMat" material="color:#BBB"></a-mixin>
@@ -251,8 +252,8 @@
       <!-- Baners da sala de entrada e sala do totem -->
       <a-entity position="-10 0 0">
         <!-- Baner sala entrada -->
-        <a-box depth="0.1" height="4" width="5" rotation="0 90 0" position="0.01 2.7 -0.5" material="color:#000000"></a-box>
-        
+        <!-- <a-box depth="0.1" height="4" width="5" rotation="0 90 0" position="0.01 2.7 -0.5" material="color:#000000" src="logo_memorial"></a-box> -->
+        <a-box src="#logo_memorial"></a-box>
         <!-- Baner sala totem -->
         <a-box depth="0.1" height="4" width="5" rotation="0 90 0" position="0.01 2.7 -7" material="color:#000000"></a-box>
           
