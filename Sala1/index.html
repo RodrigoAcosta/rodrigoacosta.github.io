@@ -15,7 +15,7 @@
       <!-- posiciona a camera -->
 <!-- DARIA PARA SETAR O Y DA CAMERA COM A ALTURA DA PESSOA, SIMULAR A PERSPECTIVA DAQUELA PESSOA -->
       <a-camera
-        position="5 1.5 0"
+        position="5 1.5 10"
         cursor-visible="true"
         cursor-scale="2"
         cursor-color="#0095DD"
@@ -47,14 +47,17 @@
         <img id="texto_mural_amarelo2_esquerda" src="imgs/texto-amarelo-2-fundo-esquerda.png">
         <img id="texto_mural_amarelo2_direita" src="imgs/texto-amarelo-2-fundo-direita.png">
         <img id="letreiro_PREC" src="imgs/Letreiro-PREC.png">
+        <img id="letreiro_HUE3" src="imgs/hue3.png">
 
         <img id="mural_amarelo1_esquerda" src="imgs/cobertura_anglo.jpg">
-        <img id="mural_amarelo1_direita" src="imgs/chamine_anglo.jpg">
+        <img id="mural_amarelo1_direita" src="imgs/chamine_anglo.png">
         <img id="mural_amarelo2_esquerda" src="imgs/ferramentas_anglo.jpg">
         <img id="mural_amarelo2_direita" src="imgs/paliteiro_anglo.jpg">
 
-
-
+        <img id="imagem_mural_externo1_esquerda" src="imgs/passarela_anglo.jpg">
+        <img id="imagem_mural_externo1_direita" src="imgs/planta_fabril_anglo.png">
+        <img id="imagem_mural_externo2_esquerda" src="imgs/fachada_anglo.png">
+        <img id="imagem_mural_externo2_direita" src="imgs/entrada_anglo.png">
 
         <a-mixin id="floorMat" material="color:#BBB"></a-mixin>
         <img id="groundTexture" src="imgs/piso_anglo.jpg">
@@ -164,12 +167,18 @@
 <!-- OBJETOS MEMORIAL -->
 
       <!-- Letreiro PREC -->
-      <a-entity position="4 2.5 3.05">
+      <a-entity position="1.5 2.5 3.05">
         <!-- Vidro Parede -->
         <a-box depth="0.03" height="2" width="5" material="side: double; transparent: true; opacity: 0.5"></a-box>
         <a-image position = "0 0.2 0.025" width="5" height="2" src="#letreiro_PREC" transparent="true" alpha-test="0.5"></a-image>
       </a-entity>
 
+      <!-- Letreiro HU3 -->
+      <a-entity position="7 2.2 3.05">
+          <!-- Vidro Parede -->
+          <a-box position = "0 0.3 0" depth="0.03" height="2" width="5" material="side: double; transparent: true; opacity: 0.5"></a-box>
+          <a-image position = "0 0.2 0.025" width="5" height="2" src="#letreiro_HUE3" transparent="true" alpha-test="0.5"></a-image>
+        </a-entity>
 
       <!-- Texto Plotado na Parede da Sala B -->
       <a-image position = "9.9 2 -7.7" width="5" height="5" rotation="0 -90 0" src="#texto_vao_salaB" transparent="true" alpha-test="0.5"></a-image>
@@ -212,14 +221,8 @@
         <a-image position = "-2.98 1.55 5.65" width="0.5" height="0.5" rotation="0 180 0" src="#texto_mural_externo1_direita" transparent="true" alpha-test="0.5"></a-image>
         <a-image position = "-1.02 1.55 5.65" width="0.5" height="0.5" rotation="0 180 0" src="#texto_mural_externo1_esquerda" transparent="true" alpha-test="0.5"></a-image>
         <!-- Imagens Expositor -->
-
-
-
-
-
-
-
-
+        <a-image position="-1.56 1.55 5.65" width="0.6" height="0.5" rotation="0 180 0" src="#imagem_mural_externo1_esquerda" transparent="false" alpha-test="0.5"></a-image>
+        <a-image position="-2.44  1.55 5.65" width="0.6" height="0.5" rotation="0 180 0" src="#imagem_mural_externo1_direita" transparent="false" alpha-test="0.5"></a-image>
 
         <!-- Barras horizontais -->
         <a-box depth="0.5" height="0.15" width="1" position="1.125 0.06 5.5" material="color:#DF7401"></a-box>
@@ -242,12 +245,8 @@
         <a-image position = "1.01 1.55 5.65" width="0.5" height="0.5" rotation="0 180 0" src="#texto_mural_externo2_direita" transparent="true" alpha-test="0.5"></a-image>
         <a-image position = "2.98 1.55 5.65" width="0.5" height="0.5" rotation="0 180 0" src="#texto_mural_externo2_esquerda" transparent="true" alpha-test="0.5"></a-image>
         <!-- Imagens Expositor --> 
-
-
-
-
-
-
+        <a-image position="2.44 1.55 5.65" width="0.6" height="0.5" rotation="0 180 0" src="#imagem_mural_externo2_esquerda" transparent="false" alpha-test="0.5"></a-image>
+        <a-image position="1.56 1.55 5.65" width="0.6" height="0.5" rotation="0 180 0" src="#imagem_mural_externo2_direita" transparent="false" alpha-test="0.5"></a-image>
 
         <!-- Barras horizontais -->
         <a-box depth="0.5" height="0.15" width="1" position="-2.875 0.06 5.5" material="color:#DF7401"></a-box>
