@@ -15,7 +15,7 @@
       <!-- posiciona a camera -->
 <!-- DARIA PARA SETAR O Y DA CAMERA COM A ALTURA DA PESSOA, SIMULAR A PERSPECTIVA DAQUELA PESSOA -->
       <a-camera
-        position="-3 1.5 -5"
+        position="5 1.5 -5"
         cursor-visible="true"
         cursor-scale="2"
         cursor-color="#0095DD"
@@ -30,7 +30,12 @@
         <img id="viga_data" src="imgs/viga_data.png">
         <img id="mural_rampa" src="imgs/mural-fundo-Totem-Esquerda.jpg">
         <img id="mural_seringa" src="imgs/mural-fundo-Totem-Direita.jpg">
-        
+        <img id="mural_chao" src="imgs/mural-grande-SalaB-Esquerda.jpg">
+        <img id="mural_maquinas" src="imgs/mural-grande-SalaB-Direita.jpg">
+        <img id="mural_interior" src="imgs/mural-grande-SalaB-ParedeDireita-Esquerda.jpg">
+        <img id="mural_chamine" src="imgs/mural-grande-SalaB-ParedeDireita-Direita.jpg">
+        <img id="mural_historia_anglo" src="imgs/historia-Anglo.png">
+        <img id="mural_trajetoria_anglo" src="imgs/trajetoria-memorial.png">
         
         <!-- Quadros da Parede -->
         <a-mixin id="floorMat" material="color:#BBB"></a-mixin>
@@ -227,21 +232,25 @@
       <a-entity position="0 0 -2.75">
           <!-- Baner direita -->
           <a-box depth="0.1" height="3.5" width="4" position="2.5 2.3 5.5" material="color:#000000"></a-box>
-          
+          <a-plane src="#mural_historia_anglo" rotation="0 180 0" position="7 2.3 5.35" height="3.25" width="3.35"></a-plane>
           <!-- Baner direita -->
           <a-box depth="0.1" height="3.5" width="4" position="7 2.3 5.5" material="color:#000000"></a-box>
-          
+          <a-plane src="#mural_trajetoria_anglo" rotation="0 180 0" position="2.5 2.3 5.35" height="3.25" width="3.35"></a-plane>
       </a-entity>      
 
       <!-- Painéis da sala direita -->
       <a-entity position="0 0 -15">
           <!-- Painel da parede do fundo da sala -->
-          <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#990000"></a-box>
+          <a-box depth="0.2" height="2" width="8.8" position="5 2.06 5.5" material="color:#990000"></a-box>
+          <a-plane src="#mural_chao" rotation="0 0 0" position="2.75 2.06 5.61" height="2" width="4.3"></a-plane>
+          <a-plane src="#mural_maquinas" rotation="0 0 0" position="7.2 2.06 5.61" height="2" width="4.3"></a-plane>
       </a-entity>   
 
       <a-entity position="0 0 -9">    
           <!-- Painel da parede direita -->
-          <a-box depth="7.8" height="2" width="0.2" position="9.5 2.06 7.5" material="color:#990000"></a-box>
+          <a-box depth="8.8" height="2" width="0.2" position="9.5 2.06 7.5" material="color:#990000"></a-box>
+          <a-plane src="#mural_interior" rotation="0 -90 0" position="9.399 2.06 5.25" height="2" width="4.3"></a-plane>
+          <a-plane src="#mural_chamine" rotation="0 -90 0" position="9.399 2.06 9.75" height="2" width="4.3"></a-plane>
           
       </a-entity>      
 
@@ -270,9 +279,9 @@
       <!-- Painéis da sala Totem -->
       <a-entity position="-10 0 -15">
         <!-- Painel da parede do fundo da sala -->
-        <a-box depth="0.2" height="2" width="7.8" position="5 2.06 5.5" material="color:#990000"></a-box>
-        <a-plane src="#mural_rampa" rotation="0 0 0" position="3.5 2.06 5.61" height="2" width="4.8"></a-plane>
-        <a-plane src="#mural_seringa" rotation="0 0 0" position="7.5 2.06 5.61" height="2" width="4.8"></a-plane>
+        <a-box depth="0.2" height="2" width="8.8" position="5 2.06 5.5" material="color:#990000"></a-box>
+        <a-plane src="#mural_rampa" rotation="0 0 0" position="2.75 2.06 5.61" height="2" width="4.3"></a-plane>
+        <a-plane src="#mural_seringa" rotation="0 0 0" position="7.2 2.06 5.61" height="2" width="4.3"></a-plane>
       </a-entity>
 
       <!-- Baners da sala de entrada e sala do totem -->
