@@ -1,28 +1,7 @@
-<style>
-    #mensagem{
-        transition: all 0.52s;
-        background: #FFF;
-        border: #777 solid 1px;
-        box-shadow: 1px 1px 5px rgba(0,0,0,.52);
-        position: fixed;
-        top: -150px;
-        width: 50%;
-        padding: 25px 0;
-        text-align: center;
-        left: 25%;
-        opacity: 0;
-    }
-    
-    #mensagem.ver{
-        top: 75px;
-        opacity: 1;
-}
-</style>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>Memorial UFPEL - A-Frame</title>
         <meta name="description" content="Visita ao Memorial da UFPEL com a Tecnologia de Realidade Virtual.">
         <link rel="stylesheet" type="text/css" href="style.css"/>
@@ -34,13 +13,11 @@
             <h1>Memorial UFPEL</h1>
         </header>
         <hr>
-        <div id="mensagem">Desculpem-nos o transtorno, mas o projeto foi descontinuado.</div>
         <div class="lists">
             <ul id="major-list">
                 <li>
                     <figure>
-                        <a onclick="msg()" style="background-image: url(https://cloud.githubusercontent.com/assets/674727/24217331/ba3d5b86-0efc-11e7-8a7c-ac74b3f35a65.png)"></a>
-                        <!-- <a href="Sala1/" style="background-image: url(https://cloud.githubusercontent.com/assets/674727/24217331/ba3d5b86-0efc-11e7-8a7c-ac74b3f35a65.png)"></a> -->
+                        <a href="Sala1/" style="background-image: url(https://cloud.githubusercontent.com/assets/674727/24217331/ba3d5b86-0efc-11e7-8a7c-ac74b3f35a65.png)"></a>
                     </figure>
                 </li>
                 <li>
@@ -138,13 +115,3 @@
         </footer>
     </body>
 </html>
-
-
-
-<script src="scripts.js"></script>
-<script type="text/javascript">
-    function msg() {
-        $("#mensagem").addClass('ver');
-        setTimeout(function() {$("#mensagem").removeClass('ver'); }, 3000);
-    }
-</script>
